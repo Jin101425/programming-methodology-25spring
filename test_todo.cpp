@@ -64,9 +64,13 @@ TEST(TodoListTest, RemoveInvalidIndexThrows) {
 TEST(TodoListTest, AddTooManyTasksThrows) {
     TodoList todo;
     todo.init();
-
+    
     // TODO: Add exactly 32 tasks in a loop
+    for (int i=0; i<32; i++) {
+        todo.add_task("Sample Task");
+    }
     // Then try adding a 33rd task and expect an exception
+    todo.add_task("33rd Task");
 
     todo.destroy();
 }
